@@ -16,6 +16,7 @@ spec.json 형식:
      "cta":"우주 좋아하는 친구 태그하기 🔭"}   # cta 생략 시 "댓글로 알려주세요 💬"
   ]
 }
+photo: (선택) 실제 사진 경로, 예 "assets/img/m87.jpg" → 표지는 전면 배경, 본문은 사진 칸에 채움. credit: 사진 출처 표기 (예 "Image: NASA/JPL-Caltech")
 visual: moon, earth, planet, ringed, sun, blackhole, nebula, galaxy, comet, stars, signal, ocean, pyramid, question
 """
 import json, sys, random, html, os
@@ -85,6 +86,21 @@ def visual_svg(kind, size, accent, seed=1):
     return f'<svg width="{size}" height="{size}" viewBox="0 0 {size} {size}"><defs><filter id="bl"><feGaussianBlur stdDeviation="{size*.06:.0f}"/></filter></defs>{body}</svg>'
 
 
+def photo_uri(path, max_side=1600):
+    """로컬 사진을 data URI로 (assets/img/... 경로, spec 파일 기준 상대경로 허용)"""
+    import base64, io
+    from PIL import Image
+    im = Image.open(path).convert("RGB")
+    im.thumbnail((max_side, max_side))
+    buf = io.BytesIO(); im.save(buf, "JPEG", quality=88)
+    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+
+
+def credit_html(s):
+    c = s.get("credit")
+    return f'<div style="position:absolute;left:52px;bottom:44px;font-size:22px;opacity:.7">{esc(c)}</div>' if c else ""
+
+
 def esc(s):
     return html.escape(s or "")
 
@@ -126,14 +142,19 @@ def cover(s, spec, i):
     else:
         vispos = "left:90px;top:40px"
         text = f'<div style="position:absolute;left:64px;right:64px;bottom:170px">'
+    if s.get("photo"):
+        vis_html = f'<div style="position:absolute;inset:0;background:url({photo_uri(s["photo"])}) center/cover no-repeat"></div>'
+    else:
+        vis_html = f'<div style="position:absolute;{vispos}">{vis}</div>'
     inner = f"""
-<div style="position:absolute;{vispos}">{vis}</div>
+{vis_html}
 <div style="position:absolute;left:0;right:0;bottom:0;height:{H*0.45:.0f}px;background:linear-gradient(to bottom,rgba(5,9,25,0),rgba(5,9,25,.92) 45%)"></div>
 <div class="series">{esc(spec['series'])}</div>
 {text}
   <div style="font-size:38px;font-weight:700;opacity:.85;margin-bottom:22px">{esc(s.get('kicker',''))}</div>
   <div style="font-size:104px;font-weight:900;line-height:1.18;letter-spacing:-2px">{t1}<br>{t2}</div>
 </div>
+{credit_html(s)}
 <div class="sig">{esc(spec['signature'])}</div>"""
     return page(inner, spec["seed"] + i, "radial-gradient(circle at 50% 30%,#2a3a7a 0,#0B1430 60%)")
 
@@ -154,14 +175,17 @@ def body(s, spec, i):
     labelhtml = f'<div style="font-size:40px;font-weight:800;color:{a};margin-left:22px">{esc(label)}</div>' if label else ""
     big = s.get("big")
     bightml = f'<div style="position:absolute;left:0;right:0;top:250px;text-align:center;font-size:120px;font-weight:900;color:{a};text-shadow:0 6px 30px rgba(0,0,0,.6)">{esc(big)}</div>' if big else ""
+    photo_card = (f'<div style="width:100%;height:100%;background:url({photo_uri(s["photo"])}) center/cover no-repeat"></div>'
+                  if s.get("photo") else vis)
     inner = f"""
 <div style="position:absolute;left:64px;top:64px;display:flex;align-items:center">{tagbox}{labelhtml}</div>
-<div style="position:absolute;left:100px;top:190px;width:880px;height:620px;border-radius:36px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);overflow:hidden;display:flex;align-items:center;justify-content:center">{vis}</div>
+<div style="position:absolute;left:100px;top:190px;width:880px;height:620px;border-radius:36px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);overflow:hidden;display:flex;align-items:center;justify-content:center">{photo_card}</div>
 {bightml}{extra}
 <div style="position:absolute;left:72px;right:72px;top:880px">
   <div style="font-size:66px;font-weight:900;line-height:1.25;letter-spacing:-1px">{accentize(s.get('title',''), s.get('accent_word'), a)}</div>
   <div style="font-size:38px;font-weight:500;line-height:1.5;opacity:.85;margin-top:26px">{esc(s.get('desc',''))}</div>
 </div>
+{credit_html(s)}
 <div class="sig">{esc(spec['signature'])}</div>"""
     return page(inner, spec["seed"] + i, f"linear-gradient(180deg,#0E1A40,{NAVY})")
 
