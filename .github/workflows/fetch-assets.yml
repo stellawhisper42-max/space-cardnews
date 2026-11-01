@@ -1,0 +1,28 @@
+name: fetch-assets
+on:
+  push:
+    paths: ["assets/requests.txt"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download requested images
+        run: |
+          mkdir -p assets/img
+          while IFS='|' read -r name url; do
+            [ -z "$name" ] && continue
+            case "$name" in \#*) continue;; esac
+            [ -f "assets/img/$name" ] && continue
+            curl -fsSL --max-time 120 -o "assets/img/$name" "$url" || echo "FAILED $name $url" >> assets/failed.txt
+          done < assets/requests.txt
+      - name: Commit
+        run: |
+          git config user.name "asset-bot"
+          git config user.email "asset-bot@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet || git commit -m "Fetch requested assets"
+          git push
