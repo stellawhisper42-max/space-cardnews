@@ -1,0 +1,8 @@
+{"series":"우주","seed":21,"slides":[
+{"role":"cover","kicker":"밤하늘 이웃 탐방","title1":"지구에서 가장","title2":"가까운 별 5곳","accent_word":"5곳","visual":"sun","layout":"bottom"},
+{"role":"body","tag":"01","big":"4.25광년","title":"프록시마 센타우리","desc":"태양 다음으로 가장 가까운 별. 작고 어두운 적색왜성이에요","visual":"planet"},
+{"role":"body","tag":"02","big":"4.37광년","title":"알파 센타우리 A·B","desc":"서로를 도는 두 별. 남반구 밤하늘에서 밝게 빛나요","visual":"sun"},
+{"role":"body","tag":"03","big":"5.96광년","title":"바너드별","desc":"밤하늘에서 위치가 가장 빠르게 바뀌어 보이는 별이에요","visual":"comet"},
+{"role":"body","tag":"04","big":"7.86광년","title":"울프 359","desc":"맨눈으로는 보이지 않을 만큼 어두운 적색왜성","visual":"stars"},
+{"role":"body","tag":"05","big":"8.3광년","title":"랄랑드 21185","desc":"쌍안경으로 찾아볼 수 있는 밝기의 적색왜성","visual":"planet"},
+{"role":"end","question":"빛의 속도로도 4년, 너라면 가볼래?","accent_word":"4년","summary":"가장 가까운 별도 빛으로 4년 넘게 걸려요"}]}

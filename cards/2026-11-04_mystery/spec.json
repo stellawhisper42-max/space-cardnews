@@ -1,0 +1,8 @@
+{"series":"미스터리","seed":34,"slides":[
+{"role":"cover","kicker":"미해결 사건 파일","title1":"72초 동안 들린","title2":"우주의 신호","accent_word":"우주의 신호","visual":"signal","layout":"left"},
+{"role":"body","tag":"01","label":"1977.08.15","title":"전파망원경에 잡힌 강한 신호","desc":"미국 오하이오주립대 '빅 이어' 망원경이 기록했어요","visual":"signal","stamp":false},
+{"role":"body","tag":"02","big":"6EQUJ5","title":"출력지에 적힌 'Wow!'","accent_word":"'Wow!'","desc":"천문학자 제리 이만이 신호 세기 옆에 펜으로 적었어요","visual":"stars","stamp":false},
+{"role":"body","tag":"03","big":"72초","title":"관측 가능한 시간 내내 이어졌다","desc":"지구 자전으로 그 하늘이 시야를 지나는 동안 계속 들렸어요","visual":"galaxy","stamp":false},
+{"role":"body","tag":"04","title":"그 뒤로 다시 들리지 않았다","desc":"수십 년 동안 같은 하늘을 찾아봤지만 반복되지 않았어요","visual":"stars","stamp_text":"미해결"},
+{"role":"body","tag":"05","title":"과학자들의 추정: 수소 구름","accent_word":"수소 구름","desc":"강한 빛을 받은 차가운 수소 구름이 잠깐 밝아졌다는 가설(2024)","visual":"nebula","stamp_text":"가설"},
+{"role":"end","question":"외계 신호였을까, 자연 현상이었을까?","accent_word":"자연 현상","summary":"아직 확정된 설명은 없어요"}]}

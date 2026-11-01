@@ -1,0 +1,8 @@
+{"series":"만약에","seed":11,"slides":[
+{"role":"cover","kicker":"상상 실험","title1":"만약 달이","title2":"사라진다면?","accent_word":"사라진다면?","visual":"moon","layout":"center"},
+{"role":"body","tag":"01","label":"그날 밤","title":"밤하늘이 훨씬 어두워진다","desc":"달빛이 사라져 별과 은하수가 더 또렷해져요","visual":"stars"},
+{"role":"body","tag":"02","label":"몇 시간 뒤","big":"약 1/3","title":"밀물과 썰물이 크게 줄어든다","accent_word":"줄어든다","desc":"태양이 만드는 조석만 남아 지금의 약 3분의 1이 돼요","visual":"ocean"},
+{"role":"body","tag":"03","label":"그 뒤로 계속","title":"하루가 길어지는 속도가 멈춘다","desc":"달이 지구 자전에 걸던 브레이크가 사라져요","visual":"earth"},
+{"role":"body","tag":"04","label":"아주 먼 미래","title":"자전축이 크게 흔들릴 수 있다","desc":"과학자들의 추정: 계절이 지금보다 훨씬 극단적으로 변할 수 있어요","visual":"earth"},
+{"role":"body","tag":"05","label":"그리고","title":"일식과 월식도 사라진다","desc":"해를 가리거나 지구 그림자에 들어갈 달이 없으니까요","visual":"sun"},
+{"role":"end","question":"너라면 무엇이 가장 그리울까?","accent_word":"그리울까?","summary":"달은 생각보다 많은 걸 지키고 있어요"}]}
