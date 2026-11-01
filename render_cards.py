@@ -12,7 +12,8 @@ spec.json 형식:
      "accent_word":"사라진다면?", "visual":"moon", "layout":"bottom"|"center"|"left"},
     {"role":"body", "tag":"01", "label":"1분 뒤", "big":"38만 km",
      "title":"밤하늘이 어두워진다", "desc":"달빛이 사라지고 별이 더 또렷해져요", "visual":"earth"},
-    {"role":"end", "question":"너라면 무엇이 가장 그리울까?", "summary":"달은 생각보다 많은 걸 지키고 있어요"}
+    {"role":"end", "question":"너라면 무엇이 가장 그리울까?", "summary":"달은 생각보다 많은 걸 지키고 있어요",
+     "cta":"우주 좋아하는 친구 태그하기 🔭"}   # cta 생략 시 "댓글로 알려주세요 💬"
   ]
 }
 visual: moon, earth, planet, ringed, sun, blackhole, nebula, galaxy, comet, stars, signal, ocean, pyramid, question
@@ -172,7 +173,7 @@ def end(s, spec, i):
 <div style="position:absolute;left:80px;right:80px;top:640px;text-align:center">
   <div style="font-size:76px;font-weight:900;line-height:1.3;letter-spacing:-1px">{accentize(s.get('question',''), s.get('accent_word'), a)}</div>
   <div style="font-size:38px;font-weight:500;opacity:.85;margin-top:40px;line-height:1.5">{esc(s.get('summary',''))}</div>
-  <div style="font-size:34px;font-weight:700;margin-top:60px;color:{a}">댓글로 알려주세요 💬</div>
+  <div style="font-size:34px;font-weight:700;margin-top:60px;color:{a}">{esc(s.get('cta','댓글로 알려주세요 💬'))}</div>
 </div>
 <div class="sig">{esc(spec['signature'])}</div>"""
     return page(inner, spec["seed"] + i, "radial-gradient(circle at 50% 40%,#23306b 0,#0B1430 65%)")
