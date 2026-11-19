@@ -1,2 +1,4 @@
 # 형식: 저장할파일이름|원본이미지URL  (NASA/ESA/ESO 등 사용 조건 확인된 것만)
 m87_spitzer_test.jpg|https://images-assets.nasa.gov/image/PIA23122/PIA23122~orig.jpg
+cats_head_webb_hubble.jpg|https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2026/10/STScI-01M4C0TRB0KSNTT73TRKDX7W29.jpg
+eso2613a.jpg|https://cdn.eso.org/images/large/eso2613a.jpg
