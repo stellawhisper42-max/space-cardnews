@@ -1,0 +1,9 @@
+{"series":"우주","seed":23,"slides":[
+{"role":"cover","kicker":"웹 망원경이 찍은 성운","title1":"우주에 숨어 있는","title2":"고양이 얼굴","accent_word":"고양이 얼굴","layout":"bottom","photo":"assets/img/cats_head_cover.jpg","credit":"Image: NASA, ESA, CSA, STScI; Image Processing: Joseph DePasquale (STScI)"},
+{"role":"body","tag":"01","label":"왜 지금?","title":"10월 29일 공개된 새 사진","desc":"끝까지 보면 고양이가 어디 있는지 보여요","photo":"assets/img/cats_head_wide.jpg","credit":"Image: NASA, ESA, CSA, STScI; Image Processing: Joseph DePasquale (STScI)"},
+{"role":"body","tag":"02","label":"어디?","big":"7,500광년","title":"용골자리 성운 속 먼지 기둥","accent_word":"먼지 기둥","desc":"지구에서 약 7,500광년 떨어져 있어요","photo":"assets/img/cats_head_mid.jpg","credit":"Image: NASA, ESA, CSA, STScI; Image Processing: Joseph DePasquale (STScI)"},
+{"role":"body","tag":"03","label":"두 개의 눈","title":"허블과 웹이 같은 곳을 찍었다","desc":"허블은 가시광, 웹은 적외선으로 봤어요","photo":"assets/img/cats_head_base.jpg","credit":"Image: NASA, ESA, CSA, STScI; Image Processing: Joseph DePasquale (STScI)"},
+{"role":"body","tag":"04","label":"찾아보세요","title":"기둥 꼭대기가 고양이 머리","accent_word":"고양이 머리","desc":"둥근 머리와 뾰족한 귀가 보이나요?","photo":"assets/img/cats_head_close.jpg","credit":"Image: NASA, ESA, CSA, STScI; Image Processing: Joseph DePasquale (STScI)"},
+{"role":"body","tag":"05","label":"누가 깎았을까","title":"큰 별들의 빛과 바람","desc":"과학자들의 추정: 자외선과 항성풍이 먼지를 깎았어요","visual":"nebula"},
+{"role":"body","tag":"06","label":"그런데 사실은","title":"빨간 눈은 아기 별일 수도","accent_word":"아기 별","desc":"먼지에 싸여 태어나는 중인 별로 추정돼요","visual":"stars"},
+{"role":"end","question":"여러분 눈엔 고양이로 보이나요?","accent_word":"고양이로","summary":"11/24(화) 밤엔 슈퍼문도 떠요 🌕","cta":"다음 편 보려면 저장 📌"}]}

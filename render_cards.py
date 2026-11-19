@@ -98,7 +98,7 @@ def photo_uri(path, max_side=1600):
 
 def credit_html(s):
     c = s.get("credit")
-    return f'<div style="position:absolute;left:52px;bottom:44px;font-size:22px;opacity:.7">{esc(c)}</div>' if c else ""
+    return f'<div style="position:absolute;left:52px;bottom:40px;max-width:680px;font-size:19px;line-height:1.3;opacity:.7">{esc(c)}</div>' if c else ""
 
 
 def esc(s):
