@@ -1,76 +1,83 @@
 {
-"series": "미스터리",
-"seed": 25,
-"slides": [
-{
-"role": "cover",
-"kicker": "사건 파일 No.02",
-"title1": "태양계에 들어온",
-"title2": "외계 우주선?",
-"accent_word": "외계 우주선?",
-"visual": "comet",
-"layout": "bottom"
-},
-{
-"role": "body",
-"tag": "01",
-"label": "사건 개요",
-"title": "2025년 7월 1일, 칠레",
-"desc": "ATLAS 망원경이 태양계 밖 손님을 처음 보고했어요",
-"visual": "stars"
-},
-{
-"role": "body",
-"tag": "02",
-"label": "정체",
-"big": "3번째",
-"title": "역대 세 번째 성간 천체",
-"desc": "다른 별 근처에서 온 걸로 확인된 세 번째 천체예요",
-"visual": "comet"
-},
-{
-"role": "body",
-"tag": "03",
-"label": "수상한 점",
-"big": "시속 22만 km",
-"title": "엄청난 속도로 들어왔다",
-"desc": "이 속도가 소문의 불씨가 됐어요",
-"visual": "comet"
-},
-{
-"role": "body",
-"tag": "04",
-"label": "떠도는 소문",
-"title": "외계 기술일 수 있다?",
-"accent_word": "외계 기술",
-"desc": "심사 전 논문이 나오며 소문이 퍼졌어요",
-"visual": "signal"
-},
-{
-"role": "body",
-"tag": "05",
-"label": "검증",
-"title": "NASA: \"이건 혜성\"",
-"accent_word": "혜성",
-"desc": "코마·꼬리와 물·이산화탄소가 확인됐어요. 지구에 위협도 없었어요",
-"visual": "comet",
-"stamp_text": "혜성 확인"
-},
-{
-"role": "body",
-"tag": "06",
-"label": "그런데 사실은",
-"title": "우리보다 오래된 곳 출신?",
-"desc": "과학자들의 추정: 태양계보다 오래된 행성계에서 왔을 수 있어요",
-"visual": "galaxy",
-"stamp": false
-},
-{
-"role": "end",
-"question": "다음 성간 손님은 무엇을 가져올까?",
-"accent_word": "성간 손님",
-"summary": "소문보다 관측이 먼저예요",
-"cta": "우주 좋아하는 친구 태그하기 🔭"
-}
-]
+ "series": "미스터리",
+ "seed": 25,
+ "slides": [
+  {
+   "role": "cover",
+   "kicker": "사건 파일 No.02 · 허블이 찍은 진짜 사진",
+   "title1": "태양계에 들어온",
+   "title2": "외계 우주선?",
+   "accent_word": "외계 우주선?",
+   "layout": "bottom",
+   "photo": "assets/img/atlas_hubble_2025jul.jpg",
+   "credit": "Image: NASA, ESA, David Jewitt (UCLA); Image Processing: Joseph DePasquale (STScI)"
+  },
+  {
+   "role": "body",
+   "tag": "01",
+   "label": "사건 개요",
+   "title": "2025년 7월 1일, 칠레",
+   "desc": "ATLAS 망원경이 태양계 밖 손님을 처음 보고했어요",
+   "photo": "assets/img/atlas_hubble_2025jul.jpg",
+   "credit": "Image: NASA, ESA, David Jewitt (UCLA); Image Processing: Joseph DePasquale (STScI)",
+   "photo_size": "170%"
+  },
+  {
+   "role": "body",
+   "tag": "02",
+   "label": "정체",
+   "big": "3번째",
+   "title": "역대 세 번째 성간 천체",
+   "desc": "다른 별 근처에서 온 걸로 확인된 세 번째 천체예요",
+   "photo": "assets/img/atlas_hubble_2025nov.jpg",
+   "credit": "NASA, ESA, STScI, D. Jewitt (UCLA), M.-T. Hui (Shanghai Astronomical Observatory). Image Processing: J. DePasquale (STScI)"
+  },
+  {
+   "role": "body",
+   "tag": "03",
+   "label": "수상한 점",
+   "big": "시속 22만 km",
+   "title": "엄청난 속도로 들어왔다",
+   "desc": "이 속도가 소문의 불씨가 됐어요",
+   "photo": "assets/img/atlas_hubble_2025jul.jpg",
+   "credit": "Image: NASA, ESA, David Jewitt (UCLA); Image Processing: Joseph DePasquale (STScI)"
+  },
+  {
+   "role": "body",
+   "tag": "04",
+   "label": "떠도는 소문",
+   "title": "외계 기술일 수 있다?",
+   "accent_word": "외계 기술",
+   "desc": "심사 전 논문이 나오며 소문이 퍼졌어요",
+   "visual": "signal"
+  },
+  {
+   "role": "body",
+   "tag": "05",
+   "label": "검증",
+   "title": "NASA: \"이건 혜성\"",
+   "accent_word": "혜성",
+   "desc": "코마·꼬리와 물·이산화탄소가 확인됐어요. 지구에 위협도 없었어요",
+   "stamp_text": "혜성 확인",
+   "photo": "assets/img/atlas_hubble_2025nov.jpg",
+   "credit": "NASA, ESA, STScI, D. Jewitt (UCLA), M.-T. Hui (Shanghai Astronomical Observatory). Image Processing: J. DePasquale (STScI)",
+   "photo_size": "160%"
+  },
+  {
+   "role": "body",
+   "tag": "06",
+   "label": "그런데 사실은",
+   "title": "우리보다 오래된 곳 출신?",
+   "desc": "과학자들의 추정: 태양계보다 오래된 행성계에서 왔을 수 있어요",
+   "visual": "galaxy",
+   "stamp": false
+  },
+  {
+   "role": "end",
+   "question": "다음 성간 손님은 무엇을 가져올까?",
+   "accent_word": "성간 손님",
+   "summary": "소문보다 관측이 먼저예요",
+   "cta": "우주 좋아하는 친구 태그하기 🔭"
+  }
+ ]
 }

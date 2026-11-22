@@ -1,0 +1,52 @@
+name: gen-ai-images
+# assets/ai_requests.txt 의 `파일이름|영어 프롬프트` 줄마다 Gemini(나노바나나) 이미지 생성 → assets/img/
+# 저장소 Settings > Secrets > Actions 에 GEMINI_API_KEY 가 있어야 동작(없으면 아무것도 안 함).
+# 비용: Gemini API 유료 결제 계정에서 장당 과금. 키 등록·결제 여부는 운영자가 결정.
+on:
+  push:
+    paths: ["assets/ai_requests.txt"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      MODEL: gemini-2.5-flash-image
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then echo "GEMINI_API_KEY 없음 → 건너뜀"; exit 0; fi
+          mkdir -p assets/img
+          python3 - <<'PY'
+          import base64, json, os, urllib.request
+          from pathlib import Path
+          key, model = os.environ["GEMINI_API_KEY"], os.environ["MODEL"]
+          for line in Path("assets/ai_requests.txt").read_text(encoding="utf-8").splitlines():
+              if not line.strip() or line.startswith("#"): continue
+              name, prompt = line.split("|", 1)
+              out = Path("assets/img") / name.strip()
+              if out.exists(): continue
+              body = {"contents": [{"parts": [{"text": prompt.strip()}]}],
+                      "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "4:5"}}}
+              req = urllib.request.Request(
+                  f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                  data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": key})
+              try:
+                  res = json.load(urllib.request.urlopen(req, timeout=180))
+                  part = next(p for c in res["candidates"] for p in c["content"]["parts"] if "inlineData" in p)
+                  out.write_bytes(base64.b64decode(part["inlineData"]["data"])); print("OK", name)
+              except Exception as e:
+                  msg = str(e); print("FAIL", name, msg)
+                  with open("assets/failed.txt", "a") as f: f.write(f"AI FAILED {name} {msg}\n")
+                  if "429" in msg or "quota" in msg.lower() or "billing" in msg.lower(): break
+          PY
+      - name: Commit
+        run: |
+          git config user.name "asset-bot"
+          git config user.email "asset-bot@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet || git commit -m "Generate AI images"
+          git pull --rebase && git push

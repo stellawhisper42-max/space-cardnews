@@ -1,0 +1,34 @@
+name: render-cards
+# 사진 다운로드(fetch-assets)·AI 이미지 생성이 끝나거나 render_queue.txt 가 바뀌면 카드 렌더
+on:
+  push:
+    paths: ["cards/render_queue.txt", "cards/**/spec.json"]
+  workflow_run:
+    workflows: ["fetch-assets", "gen-ai-images"]
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: render-cards, cancel-in-progress: false }
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install
+        run: |
+          sudo apt-get update && sudo apt-get install -y fonts-noto-cjk fonts-noto-color-emoji
+          pip install playwright pillow
+          python -m playwright install --with-deps chromium
+      - name: Render queued folders
+        run: python tools/render_queue.py
+      - name: Commit
+        run: |
+          git config user.name "render-bot"
+          git config user.email "render-bot@users.noreply.github.com"
+          git add cards
+          git diff --cached --quiet || git commit -m "Render queued cards"
+          git pull --rebase && git push

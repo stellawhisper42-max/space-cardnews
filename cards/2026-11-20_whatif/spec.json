@@ -1,9 +1,81 @@
-{"series":"만약에","seed":20,"slides":[
-{"role":"cover","kicker":"상상 실험","title1":"50억 년 뒤,","title2":"태양이 죽으면?","accent_word":"죽으면?","visual":"sun","layout":"left"},
-{"role":"body","tag":"01","label":"지금","title":"태양은 아직 중년","desc":"수명의 절반에 조금 못 미쳤어요. 끝까지 보면 태양계의 결말이 보여요","visual":"sun"},
-{"role":"body","tag":"02","label":"먼 미래","title":"적색거성으로 부푼다","accent_word":"적색거성","desc":"수성·금성, 어쩌면 지구까지 삼킬 수 있어요","visual":"planet"},
-{"role":"body","tag":"03","label":"그다음","title":"바깥층을 벗어 던진다","desc":"부풀었던 겉껍질이 우주로 흩어져요","visual":"nebula"},
-{"role":"body","tag":"04","label":"마지막","big":"약 50억 년 뒤","title":"작은 백색왜성만 남는다","accent_word":"백색왜성","desc":"작고 뜨거운 별의 심장만 남아요","visual":"stars"},
-{"role":"body","tag":"05","label":"실제로 찾았다","title":"고리 2개를 두른 죽은 별","desc":"ESO VLT가 관측한 백색왜성 J1328−1450 (상상도)","photo":"assets/img/eso2613a.jpg","credit":"상상도 · ESO/L. Calçada"},
-{"role":"body","tag":"06","label":"그런데 사실은","title":"태양계의 먼 미래 예고편","accent_word":"예고편","desc":"그 고리는 부서진 행성 잔해로 만들어졌대요","visual":"ringed"},
-{"role":"end","question":"그때 지구는 남아 있을까?","accent_word":"지구는","summary":"태양도 언젠가 별의 일생을 마쳐요","cta":"다음 편 보려면 저장 📌"}]}
+{
+ "series": "만약에",
+ "seed": 20,
+ "slides": [
+  {
+   "role": "cover",
+   "kicker": "상상 실험 · 태양 실제 사진",
+   "title1": "50억 년 뒤,",
+   "title2": "태양이 죽으면?",
+   "accent_word": "죽으면?",
+   "layout": "left",
+   "photo": "assets/img/sun_sdo_pia26681.jpg",
+   "credit": "NASA/GSFC/Solar Dynamics Observatory"
+  },
+  {
+   "role": "body",
+   "tag": "01",
+   "label": "지금",
+   "title": "태양은 아직 중년",
+   "desc": "수명의 절반에 조금 못 미쳤어요. 끝까지 보면 태양계의 결말이 보여요",
+   "photo": "assets/img/sun_sdo_pia26681.jpg",
+   "credit": "NASA/GSFC/Solar Dynamics Observatory",
+   "photo_size": "140%"
+  },
+  {
+   "role": "body",
+   "tag": "02",
+   "label": "먼 미래",
+   "title": "적색거성으로 부푼다",
+   "accent_word": "적색거성",
+   "desc": "수성·금성, 어쩌면 지구까지 삼킬 수 있어요",
+   "visual": "planet"
+  },
+  {
+   "role": "body",
+   "tag": "03",
+   "label": "그다음",
+   "title": "바깥층을 벗어 던진다",
+   "desc": "남쪽 고리 성운처럼 가스 껍질이 흩어져요 (웹 망원경 사진)",
+   "photo": "assets/img/southern_ring_webb.png",
+   "credit": "Image: NASA, ESA, CSA, STScI"
+  },
+  {
+   "role": "body",
+   "tag": "04",
+   "label": "마지막",
+   "big": "약 50억 년 뒤",
+   "title": "작은 백색왜성만 남는다",
+   "accent_word": "백색왜성",
+   "desc": "작고 뜨거운 별의 심장만 남아요",
+   "photo": "assets/img/southern_ring_webb.png",
+   "credit": "Image: NASA, ESA, CSA, STScI",
+   "photo_size": "260%"
+  },
+  {
+   "role": "body",
+   "tag": "05",
+   "label": "실제로 찾았다",
+   "title": "고리 2개를 두른 죽은 별",
+   "desc": "ESO VLT가 관측한 백색왜성 J1328−1450 (상상도)",
+   "photo": "assets/img/eso2613a.jpg",
+   "credit": "상상도 · ESO/L. Calçada"
+  },
+  {
+   "role": "body",
+   "tag": "06",
+   "label": "그런데 사실은",
+   "title": "태양계의 먼 미래 예고편",
+   "accent_word": "예고편",
+   "desc": "그 고리는 부서진 행성 잔해로 만들어졌대요",
+   "visual": "ringed"
+  },
+  {
+   "role": "end",
+   "question": "그때 지구는 남아 있을까?",
+   "accent_word": "지구는",
+   "summary": "태양도 언젠가 별의 일생을 마쳐요",
+   "cta": "다음 편 보려면 저장 📌"
+  }
+ ]
+}

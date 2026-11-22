@@ -2,3 +2,7 @@
 m87_spitzer_test.jpg|https://images-assets.nasa.gov/image/PIA23122/PIA23122~orig.jpg
 cats_head_webb_hubble.jpg|https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2026/10/STScI-01M4C0TRB0KSNTT73TRKDX7W29.jpg
 eso2613a.jpg|https://cdn.eso.org/images/large/eso2613a.jpg
+atlas_hubble_2025jul.jpg|https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2025/08/STScI-01K1X6XDR76ZD4FYJ9VTWN1ERB.tif/jcr:content/renditions/Full%20Res%20(For%20Display).jpg
+atlas_hubble_2025nov.jpg|https://assets.science.nasa.gov/content/dam/science/astro/universe/news-images/STSCI-H-atlas-B-f-3437x2598.jpg
+sun_sdo_pia26681.jpg|https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia26/pia26681/PIA26681.jpg
+southern_ring_webb.png|https://assets.science.nasa.gov/content/dam/science/missions/webb/science/2022/07/STScI-01G8GZQ3ZFJRD8YF8YZWMAXCE3.png

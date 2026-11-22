@@ -17,6 +17,7 @@ spec.json 형식:
   ]
 }
 photo: (선택) 실제 사진 경로, 예 "assets/img/m87.jpg" → 표지는 전면 배경, 본문은 사진 칸에 채움. credit: 사진 출처 표기 (예 "Image: NASA/JPL-Caltech")
+photo_pos: (선택) CSS background-position, 예 "50% 30%" (기본 center) / photo_size: (선택) "cover"(기본) 또는 "180%" 같은 확대 배율
 visual: moon, earth, planet, ringed, sun, blackhole, nebula, galaxy, comet, stars, signal, ocean, pyramid, question
 """
 import json, sys, random, html, os
@@ -143,7 +144,7 @@ def cover(s, spec, i):
         vispos = "left:90px;top:40px"
         text = f'<div style="position:absolute;left:64px;right:64px;bottom:170px">'
     if s.get("photo"):
-        vis_html = f'<div style="position:absolute;inset:0;background:url({photo_uri(s["photo"])}) center/cover no-repeat"></div>'
+        vis_html = f'<div style="position:absolute;inset:0;background:url({photo_uri(s["photo"])}) {s.get("photo_pos","center")}/{s.get("photo_size","cover")} no-repeat"></div>'
     else:
         vis_html = f'<div style="position:absolute;{vispos}">{vis}</div>'
     inner = f"""
@@ -175,7 +176,7 @@ def body(s, spec, i):
     labelhtml = f'<div style="font-size:40px;font-weight:800;color:{a};margin-left:22px">{esc(label)}</div>' if label else ""
     big = s.get("big")
     bightml = f'<div style="position:absolute;left:0;right:0;top:250px;text-align:center;font-size:120px;font-weight:900;color:{a};text-shadow:0 6px 30px rgba(0,0,0,.6)">{esc(big)}</div>' if big else ""
-    photo_card = (f'<div style="width:100%;height:100%;background:url({photo_uri(s["photo"])}) center/cover no-repeat"></div>'
+    photo_card = (f'<div style="width:100%;height:100%;background:url({photo_uri(s["photo"])}) {s.get("photo_pos","center")}/{s.get("photo_size","cover")} no-repeat"></div>'
                   if s.get("photo") else vis)
     inner = f"""
 <div style="position:absolute;left:64px;top:64px;display:flex;align-items:center">{tagbox}{labelhtml}</div>
