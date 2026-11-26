@@ -6,3 +6,4 @@ atlas_hubble_2025jul.jpg|https://assets.science.nasa.gov/content/dam/science/mis
 atlas_hubble_2025nov.jpg|https://assets.science.nasa.gov/content/dam/science/astro/universe/news-images/STSCI-H-atlas-B-f-3437x2598.jpg
 sun_sdo_pia26681.jpg|https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia26/pia26681/PIA26681.jpg
 southern_ring_webb.png|https://assets.science.nasa.gov/content/dam/science/missions/webb/science/2022/07/STScI-01G8GZQ3ZFJRD8YF8YZWMAXCE3.png
+ngc7129_webb.jpg|https://assets.science.nasa.gov/content/dam/science/missions/webb/science/2026/10/weic2620a.jpg
