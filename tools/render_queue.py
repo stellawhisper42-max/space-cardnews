@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """cards/render_queue.txt 에 적힌 폴더를 렌더 → 01.jpg… (JPEG q92), PNG 삭제.
-사진(photo)이 아직 assets/img 에 없으면 그 폴더는 건너뛰고 큐에 남긴다."""
+사진(photo)이 아직 assets/img 에 없으면 그 폴더는 건너뛰고 큐에 남긴다.
+spec 최상위에 "format": "reel" 이 있으면 tools/make_reel.py 로 reel.mp4(9:16)·cover.jpg 도 만든다."""
 import json, subprocess, sys
 from pathlib import Path
 from PIL import Image
@@ -22,5 +23,7 @@ for name in [l.strip() for l in q.read_text().splitlines() if l.strip() and not 
         Image.open(p).convert("RGB").save(d / f"{i:02d}.jpg", "JPEG", quality=92)
         if not p.endswith(f"{i:02d}.jpg"):
             Path(p).unlink(missing_ok=True)
+    if spec.get("format") == "reel":   # 릴스 실험(2026-11-26~): 카드 → reel.mp4 + cover.jpg
+        subprocess.run([sys.executable, "tools/make_reel.py", str(d)], check=True)
     print("RENDERED", name)
 q.write_text("".join(f"{n}\n" for n in left))

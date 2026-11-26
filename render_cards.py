@@ -18,6 +18,7 @@ spec.json 형식:
 }
 photo: (선택) 실제 사진 경로, 예 "assets/img/m87.jpg" → 표지는 전면 배경, 본문은 사진 칸에 채움. credit: 사진 출처 표기 (예 "Image: NASA/JPL-Caltech")
 photo_pos: (선택) CSS background-position, 예 "50% 30%" (기본 center) / photo_size: (선택) "cover"(기본) 또는 "180%" 같은 확대 배율
+format: (선택) "reel" → render_queue 가 카드 렌더 뒤 tools/make_reel.py 로 릴스 영상(reel.mp4, 9:16)·cover.jpg 생성
 visual: moon, earth, planet, ringed, sun, blackhole, nebula, galaxy, comet, stars, signal, ocean, pyramid, question
 """
 import json, sys, random, html, os
